@@ -6,7 +6,7 @@ const Search = (props) => {
     const [query, setQuery] = useState(``);
     const [recipes, setRecipes] = useState([]);
 
-    const howMuchToShow = 6;
+    const howMuchToShow = 9;
     const appID = "81ceb48b";
     const appKey = "9fbaca94b8e452b62cd29bd36959519d";
 
@@ -16,7 +16,7 @@ const Search = (props) => {
     const getRecipes = async () => {
         let result = await Axios.get(url);
         setRecipes(result.data.hits);
-        console.log(result.data)
+        console.log(result.data.hits)
     }
 
     const handleSubmit = (e) => {
@@ -25,12 +25,12 @@ const Search = (props) => {
     }
 
     return (
-        <div className="blog-list">
-            <h1>Kick Off Your Next Meal Here!</h1>
-            <form className="blog-preview" onClick={handleSubmit}>
-                <input className="create" type="text" 
+        <div className="container">
+            <img src="kick-off-logo.png" className="logo" alt="" />
+            <form className="search-form" onSubmit={handleSubmit}>
+                <input className="user-input" type="text" 
                 placeholder="Enter Ingredient(s)" 
-                value={query} 
+                value={ query } 
                 onChange={(e) => setQuery(e.target.value)} 
                 />
                 <input className="search-button" type="submit" value="Search" />
