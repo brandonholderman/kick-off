@@ -2,7 +2,7 @@ import Axios from "axios";
 import { useState } from 'react';
 import RecipeList from "./RecipeList";
 
-const Search = (props) => {
+const Search = () => {
     const [query, setQuery] = useState(``);
     const [recipes, setRecipes] = useState([]);
 
@@ -10,13 +10,12 @@ const Search = (props) => {
     const appID = "81ceb48b";
     const appKey = "9fbaca94b8e452b62cd29bd36959519d";
 
-    // let queryStringForApi = randomIngredients.join(' ').replace(/\s/g, '+');
     let url = `https://api.edamam.com/search?q=${query}&app_id=${appID}&app_key=${appKey}&to=${howMuchToShow}`;
 
     const getRecipes = async () => {
         let result = await Axios.get(url);
         setRecipes(result.data.hits);
-        console.log(result.data.hits)
+        console.log(result.data.hits);
     }
 
     const handleSubmit = (e) => {
