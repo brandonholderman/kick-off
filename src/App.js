@@ -1,6 +1,6 @@
 import React from "react";
 import Search from "./Search";
-import RecipeDetails from "./RecipeDetails";
+// import RecipeDetails from "./RecipeDetails";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
@@ -13,9 +13,6 @@ function App() {
               <Switch>
                 <Route exact path="/">
                   <Search />
-                </Route>
-                <Route path="/recipe/:id">
-                  <RecipeDetails />
                 </Route>
               </Switch>
             </div>

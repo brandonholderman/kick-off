@@ -1,11 +1,24 @@
-const RecipeDetails = ({ data }) => {
+// import { useState } from "react";
+
+const RecipeDetails = (props) => {
+    if (!props.show) {
+        return null;
+    }
+
     return (
-        <div className="blog-preview">
-            <h2 className="blog-details">{data.recipe.label}</h2>
-            <img src={data.recipe.image} alt=""/>
-            {/* <ul className="ingredient-list">
-                <li>{data.recipe.ingredientLines + '\n'}</li>
-            </ul> */}
+        <div className="modal" onClick={props.onClose}>
+            <div className="modal-content" onClick={e => e.stopPropagation()}>
+                <div className="modal-header">
+                    <h4 className="modal-title">{props.label}</h4>
+                </div>
+                <div className="modal-body">
+                    <img src={props.image} alt=""/>
+                    <li>{props.ingredientLines + '\n'}</li>
+                </div>
+                <div className="modal-footer">
+                    <button onClick={props.onClose} className="modal-close">Close</button>
+                </div>
+            </div>
         </div>
     );
 }

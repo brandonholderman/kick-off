@@ -1,3 +1,4 @@
+// import useAxios from './useAxios';
 import Axios from "axios";
 import { useState } from 'react';
 import RecipeList from "./RecipeList";
@@ -5,12 +6,15 @@ import RecipeList from "./RecipeList";
 const Search = () => {
     const [query, setQuery] = useState(``);
     const [recipes, setRecipes] = useState([]);
-
+    
     const howMuchToShow = 9;
     const appID = "81ceb48b";
     const appKey = "9fbaca94b8e452b62cd29bd36959519d";
-
+    
     let url = `https://api.edamam.com/search?q=${query}&app_id=${appID}&app_key=${appKey}&to=${howMuchToShow}`;
+    
+    // let urlV2 = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${appKey}&app_key=${appKey}&to=${howMuchToShow}`;
+    // const { data, isLoading, error } = useAxios(url);
 
     const getRecipes = async () => {
         let result = await Axios.get(url);
@@ -20,7 +24,7 @@ const Search = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        getRecipes()
+        getRecipes();
     }
 
     return (
@@ -36,6 +40,8 @@ const Search = () => {
             </form>
             <div className="recipe-list">
                 {recipes.map(recipe => {
+                    // console.log(recipe._links.self.href);
+                    console.log(recipe.recipe.uri)
                     return <RecipeList data={ recipe }/>
                 })}
             </div>
