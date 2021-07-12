@@ -3,6 +3,7 @@ import Axios from "axios";
 import { useState } from 'react';
 import RecipeList from "./RecipeList";
 
+
 const Search = () => {
     const [query, setQuery] = useState(``);
     const [recipes, setRecipes] = useState([]);

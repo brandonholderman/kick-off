@@ -120,10 +120,12 @@ input:focus{ width: 600px; } */
 .modal-content {
   width: 500px;
   background-color: #fff;
+  border: 3px solid #02aff0;
 }
 
 .modal-header, .modal-footer {
   padding: 10px;
+  text-align: center;
 }
 
 .modal-title {
@@ -134,4 +136,5 @@ input:focus{ width: 600px; } */
   padding: 10px;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
+  text-align: center;
 }
