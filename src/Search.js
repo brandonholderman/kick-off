@@ -41,7 +41,6 @@ const Search = () => {
             </form>
             <div className="recipe-list">
                 {recipes.map(recipe => {
-                    // console.log(recipe._links.self.href);
                     console.log(recipe.recipe.uri)
                     return <RecipeList data={ recipe }/>
                 })}

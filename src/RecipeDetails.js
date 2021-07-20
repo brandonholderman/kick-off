@@ -13,7 +13,9 @@ const RecipeDetails = (props) => {
                 <div className="modal-body">
                     <img src={props.data.recipe.image} alt=""/>
                     {/* <a href={ props.data.recipe.url } className="recipe-link">Full Recipe</a> */}
-                    <li>{props.data.recipe.ingredientLines + '\n'}</li>
+                    <ul>{props.data.recipe.ingredientLines.map(ingredients => {
+                        return <li>{ ingredients }</li>
+                    })}</ul>
                 </div>
                 <div className="modal-footer">
                     <button onClick={props.onClose} className="modal-close">Close</button>

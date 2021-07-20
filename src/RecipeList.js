@@ -8,7 +8,6 @@ const RecipeList = ({ data }) => {
     const [recipeData, setRecipeData] = useState({});
 
     return (
-        // data.recipe.image.match(/\.(jpeg|jpg|gif|png)$/) != null && 
         <div className="recipe-tile">
             <img className="recipe-img" src={ data.recipe.image } alt="%PUBLIC_URL%/placeholder.gif" />
             <h2 className="recipe-label">{ data.recipe.label }</h2>
