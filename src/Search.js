@@ -9,15 +9,22 @@ const Search = () => {
     const [recipes, setRecipes] = useState([]);
     
     const howMuchToShow = 9;
-    const APP_ID = process.env.REACT_APP_APP_ID
-    const APP_KEY = process.env.REACT_APP_APP_KEY
-    let url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&to=${howMuchToShow}`;
+
+    const APP_ID = process.env.REACT_APP_APP_ID;
+    const APP_KEY = process.env.REACT_APP_APP_KEY;
+
+    // let url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&to=${howMuchToShow}`;
     
-    // let urlV2 = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${appKey}&app_key=${appKey}&to=${howMuchToShow}`;
+    // let url = `https://api.edamam.com/search?q=${query}&app_id=${appID}&app_key=${appKey}&to=${howMuchToShow}`;
+    
+    // let urlV2 = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${appID}&app_key=${appKey}&to=${howMuchToShow}`;
+
+    let urlV2 = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&to=${howMuchToShow}`;
+    
     // const { data, isLoading, error } = useAxios(url);
 
     const getRecipes = async () => {
-        let result = await Axios.get(url);
+        let result = await Axios.get(urlV2);
         setRecipes(result.data.hits);
         console.log(result.data.hits);
     }
