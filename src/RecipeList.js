@@ -11,7 +11,7 @@ const RecipeList = ({ data }) => {
         <div className="recipe-tile">
             <img className="recipe-img" src={ data.recipe.image } alt="%PUBLIC_URL%/placeholder.gif" />
             <h2 className="recipe-label">{ data.recipe.label }</h2>
-            <div>
+            <div className="recipe-button">
                 <button className="details-button" onClick={ () => {setShow(true); setRecipeData(data)}}>Recipe Details</button>
                 <RecipeDetails onClose={ () => setShow(false) } show={ show } data={ recipeData } />
             </div>

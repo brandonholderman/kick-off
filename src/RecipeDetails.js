@@ -4,6 +4,7 @@ const RecipeDetails = (props) => {
     }
 
     console.log(props);
+
     return (
         <div className="modal" onClick={props.onClose}>
             <div className="modal-content" onClick={e => e.stopPropagation()}>
@@ -13,8 +14,8 @@ const RecipeDetails = (props) => {
                 <div className="modal-body">
                     <img src={props.data.recipe.image} alt=""/>
                     {/* <a href={ props.data.recipe.url } className="recipe-link">Full Recipe</a> */}
-                    <ul>{props.data.recipe.ingredientLines.map(ingredients => {
-                        return <li>{ ingredients }</li>
+                    <ul className="modal-list">{props.data.recipe.ingredientLines.map(ingredients => {
+                        return <li key={ingredients}>{ ingredients }</li>
                     })}</ul>
                 </div>
                 <div className="modal-footer">

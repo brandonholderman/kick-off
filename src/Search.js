@@ -9,10 +9,9 @@ const Search = () => {
     const [recipes, setRecipes] = useState([]);
     
     const howMuchToShow = 9;
-    const appID = "81ceb48b";
-    const appKey = "9fbaca94b8e452b62cd29bd36959519d";
-    
-    let url = `https://api.edamam.com/search?q=${query}&app_id=${appID}&app_key=${appKey}&to=${howMuchToShow}`;
+    const APP_ID = process.env.REACT_APP_APP_ID
+    const APP_KEY = process.env.REACT_APP_APP_KEY
+    let url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&to=${howMuchToShow}`;
     
     // let urlV2 = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${appKey}&app_key=${appKey}&to=${howMuchToShow}`;
     // const { data, isLoading, error } = useAxios(url);
