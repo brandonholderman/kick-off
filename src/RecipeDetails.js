@@ -1,9 +1,7 @@
-const RecipeDetails = (props) => {
-    if (!props.show) {
-        return null;
-    }
+import React from "react";
 
-    console.log(props);
+const RecipeDetails = (props) => {
+    if (!props.show) return null;
 
     return (
         <div className="modal" onClick={props.onClose}>
@@ -15,7 +13,7 @@ const RecipeDetails = (props) => {
                     <img src={props.data.recipe.image} alt=""/>
                     {/* <a href={ props.data.recipe.url } className="recipe-link">Full Recipe</a> */}
                     <ul className="modal-list">{props.data.recipe.ingredientLines.map(ingredients => {
-                        return <li key={ingredients}>{ ingredients }</li>
+                        return <li key={props.data.recipe.label}>{ ingredients }</li>
                     })}</ul>
                 </div>
                 <div className="modal-footer">

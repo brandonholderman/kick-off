@@ -1,5 +1,6 @@
 import React from "react";
 import Search from "./Search";
+// import Navbar from "./Navbar";
 // import RecipeDetails from "./RecipeDetails";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';

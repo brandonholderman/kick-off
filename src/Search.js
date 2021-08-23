@@ -1,25 +1,21 @@
-// import useAxios from './useAxios';
+import React from "react";
 import Axios from "axios";
 import { useState } from 'react';
 import RecipeList from "./RecipeList";
+// import useAxios from './useAxios';
 
 
 const Search = () => {
     const [query, setQuery] = useState(``);
     const [recipes, setRecipes] = useState([]);
     
-    const howMuchToShow = 9;
+    // const howMuchToShow = 9;
 
     const APP_ID = process.env.REACT_APP_APP_ID;
     const APP_KEY = process.env.REACT_APP_APP_KEY;
 
     // let url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&to=${howMuchToShow}`;
-    
-    // let url = `https://api.edamam.com/search?q=${query}&app_id=${appID}&app_key=${appKey}&to=${howMuchToShow}`;
-    
-    // let urlV2 = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${appID}&app_key=${appKey}&to=${howMuchToShow}`;
-
-    let urlV2 = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&to=${howMuchToShow}`;
+    let urlV2 = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`;
     
     // const { data, isLoading, error } = useAxios(url);
 
@@ -47,7 +43,6 @@ const Search = () => {
             </form>
             <div className="recipe-list">
                 {recipes.map(recipe => {
-                    console.log(recipe.recipe.uri)
                     return <RecipeList data={ recipe }/>
                 })}
             </div>
