@@ -146,6 +146,12 @@
   text-align: start;
 }
 
+.modal-close {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
 
 /* Hamburger Nav Menu */
 .navBar {

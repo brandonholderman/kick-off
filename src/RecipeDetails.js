@@ -1,4 +1,5 @@
 import React from "react";
+import { MdClose } from "react-icons/md"
 
 const RecipeDetails = (props) => {
     if (!props.show) return null;
@@ -12,12 +13,14 @@ const RecipeDetails = (props) => {
                 <div className="modal-body">
                     <img src={props.data.recipe.image} alt=""/>
                     {/* <a href={ props.data.recipe.url } className="recipe-link">Full Recipe</a> */}
-                    <ul className="modal-list">{props.data.recipe.ingredientLines.map(ingredients => {
-                        return <li key={props.data.recipe.label}>{ ingredients }</li>
+                    <ul className="modal-list">{props.data.recipe.ingredientLines.map((ingredients, index) => {
+                        return <li key={index}>{ ingredients }</li>
                     })}</ul>
                 </div>
                 <div className="modal-footer">
-                    <button onClick={props.onClose} className="modal-close">Close</button>
+                    <button onClick={props.onClose} className="modal-close">
+                        <MdClose style={{ color: "#7b7b7b", width: "40px", height: "40px" }} />
+                    </button>
                 </div>
             </div>
         </div>

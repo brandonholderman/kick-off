@@ -42,8 +42,8 @@ const Search = () => {
                 <input className="search-button" type="submit" value="Search" />
             </form>
             <div className="recipe-list">
-                {recipes.map(recipe => {
-                    return <RecipeList data={ recipe }/>
+                {recipes.map((recipe, index) => {
+                    return <RecipeList data={ recipe } key={index}/>
                 })}
             </div>
         </div>       
