@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+## Search and discover over 2.3 million recipes! Kick-Off is a site that allows you to enter in any number of ingredients you have, and it will return a list of recipes matching the user's input
+
+Version 1.0.0
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
