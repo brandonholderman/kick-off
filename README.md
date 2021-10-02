@@ -1,4 +1,4 @@
-# Search and discover over 2.3 million recipes! Kick-Off is a site that allows you to enter in any number of ingredients you have, and it will return a list of recipes matching the user's input
+Search and discover over 2.3 million recipes! Kick-Off is a site that allows you to enter in any number of ingredients you have, and it will return a list of recipes matching the user's input
 
 
 ## Getting Started with Create React App
