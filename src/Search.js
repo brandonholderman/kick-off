@@ -22,7 +22,6 @@ const Search = () => {
     const getRecipes = async () => {
         let result = await Axios.get(urlV2);
         setRecipes(result.data.hits);
-        console.log(result.data.hits);
     }
 
     const handleSubmit = (e) => {
